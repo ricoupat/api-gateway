@@ -1,0 +1,24 @@
+{
+  "name": "api-gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/Server.js",
+  "scripts": {
+    "dev": "tsc && node dist/Server.js",
+    "build": "tsc",
+    "start": "node dist/Server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ricoupat/mangasync-backend.git"
+  },
+  "private": true,
+  "dependencies": {
+    "@ricoupat/common-libs": "^1.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3"
+  }
+}
