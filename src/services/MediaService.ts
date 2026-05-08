@@ -1,11 +1,11 @@
 import { Request } from "express";
-import {StreamingRepository} from "../repositories/StreamingRepository";
+import {MediaRepository} from "../repositories/MediaRepository";
 
-export class StreamingService {
-    private repository: StreamingRepository;
+export class MediaService {
+    private repository: MediaRepository;
 
     constructor() {
-        this.repository = new StreamingRepository();
+        this.repository = new MediaRepository();
     }
 
     async movieTrending() {
@@ -84,8 +84,8 @@ export class StreamingService {
     async sources(media_id: string, episode_id: string) {
         const data = await this.repository.getSources(media_id, episode_id);
         return data.map((res: any) => ({
-            image: res.image,
-            page: res.page
+            media: res.media.url,
+            subtitles: res.media.subtitles
         }));
     }
 }

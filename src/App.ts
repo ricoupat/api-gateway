@@ -1,5 +1,6 @@
 import express, { Application } from "express";
-import MangaRoutes from "./routes/MangaRoutes";
+import MediaRoutes from "./routes/MediaRoutes";
+import LibraryRoutes from "./routes/LibraryRoutes";
 
 export default class App {
     public app: Application;
@@ -18,7 +19,8 @@ export default class App {
     }
 
     private initializeRoutes() {
-        this.app.use("/manga", new MangaRoutes().router);
+        this.app.use("/media", new MediaRoutes().router);
+        this.app.use("/library", new LibraryRoutes().router);
 
         this.app.get("/health", (_, res) => {
             res.json({ status: "ok" });

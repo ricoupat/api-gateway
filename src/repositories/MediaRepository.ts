@@ -1,7 +1,7 @@
 import { Request } from "express";
-import {HttpClient} from "@ricoupat/common-libs";
+import { HttpClient } from "@ricoupat/common-libs";
 
-export class StreamingRepository {
+export class MediaRepository {
     private client: HttpClient;
 
     constructor() {
